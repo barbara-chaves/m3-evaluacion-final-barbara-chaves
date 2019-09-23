@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.9a70ec48.chunk.css",
+    "main.js": "/static/js/main.3b57e713.chunk.js",
+    "main.js.map": "/static/js/main.3b57e713.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.d52357dd.js",
+    "runtime-main.js.map": "/static/js/runtime-main.d52357dd.js.map",
+    "static/js/2.ce136b08.chunk.js": "/static/js/2.ce136b08.chunk.js",
+    "static/js/2.ce136b08.chunk.js.map": "/static/js/2.ce136b08.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.7a6fd0f48eb877381a201442c7d3b473.js": "/precache-manifest.7a6fd0f48eb877381a201442c7d3b473.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.9a70ec48.chunk.css.map": "/static/css/main.9a70ec48.chunk.css.map",
+    "static/media/Rick_and_Morty.png": "/static/media/Rick_and_Morty.75509f2e.png"
+  }
+}
