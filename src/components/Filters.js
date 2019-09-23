@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types'
 
 const Filters = props => {
   return (
@@ -8,5 +9,10 @@ const Filters = props => {
     </div>
   );
 };
+
+Filters.propTypes = {
+  value: PropTypes.string,
+  onChange: PropTypes.func
+}
 
 export default Filters;

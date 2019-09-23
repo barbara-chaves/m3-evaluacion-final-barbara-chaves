@@ -25,7 +25,7 @@ class App extends React.Component {
     this.setState({ filter: value });
   };
 
-  
+
 
   render() {
     const renderCharacterList = () => {
@@ -39,7 +39,7 @@ class App extends React.Component {
     };
 
     const renderCharacterDetails = props => {
-      let clickedChar = '';
+      let clickedChar = {};
       const routName = props.match.params.name;
       for (const char of this.state.characterList){
         let names = char.name.split(' ');

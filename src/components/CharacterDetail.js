@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const CharacterDetails = props => {
   const {name, species, origin, image, status, episodes} = props.char;
@@ -22,6 +23,10 @@ const CharacterDetails = props => {
       </div>
     </div>
   )
+}
+
+CharacterDetails.propTypes = {
+  char: PropTypes.object
 }
 
 export default CharacterDetails
