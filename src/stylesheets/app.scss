@@ -1,0 +1,23 @@
+@import "./variables.scss";
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: $appBGColor;
+  padding-bottom: 30px;
+  font-family: $textFontFamily;
+  .header {
+    width: 100%;
+    padding: 30px;
+    &__image {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      & img {
+        max-width: 100%;
+        min-width: auto;
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import "../stylesheets/app.css";
+import "../stylesheets/app.scss";
 import logo from "../images/Rick_and_Morty.png";
 import getDataFromServer from "../data/getDataFromServer";
 import Filters from "./Filters";

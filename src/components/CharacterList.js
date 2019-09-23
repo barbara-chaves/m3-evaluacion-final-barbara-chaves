@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types'
+import '../stylesheets/characters-list.scss'
 import CharacterCard from './CharacterCard'
  
 const CharacterList = props => {
@@ -13,12 +14,12 @@ const CharacterList = props => {
     })
   }
   return (
-    <section className='characters'>
+    <main className='characters'>
       {props.children}
       <ul className='characters__list'>
         {createCharacterCardList(props.characterList)}
       </ul>
-    </section>
+    </main>
   )
 }
 

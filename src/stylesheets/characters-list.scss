@@ -1,0 +1,41 @@
+@import "./variables.scss";
+
+.characters {
+  &__list {
+    padding: 0;
+    margin-top: 50px;
+    list-style: none;
+    display: grid;
+    gap: 50px;
+    @media all and (min-width: 768px) {
+      grid-template-columns: 300px 300px;
+      justify-content: center;
+    }
+    @media all and (min-width: 1280px) {
+      grid-template-columns: 300px 300px 300px;
+    }
+    @media all and (min-width: 1600px) {
+      grid-template-columns: repeat(4, 300px);
+    }
+  }
+}
+
+.filter {
+  color: $textColor;
+  height: 70px;
+  font-size: 1.25rem;
+  font-family: $textFontFamily;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  #filter__name {
+    margin-top: 10px;
+    padding: 5px 5px 5px 10px;
+    border: 2px solid $cardBGCOlor;
+    background-color: $appBGColor;
+    color: $textColor;
+    font-size: 1.25rem;
+  }
+}
