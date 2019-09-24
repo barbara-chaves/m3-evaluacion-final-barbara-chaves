@@ -3,9 +3,9 @@ import { Switch, Route } from "react-router-dom";
 import "../stylesheets/app.scss";
 import logo from "../images/Rick_and_Morty.png";
 import getDataFromServer from "../data/getDataFromServer";
-import Filters from "./Filters";
-import CharacterList from "./CharacterList";
+import Home from "./Home";
 import CharacterDetail from "./CharacterDetail";
+import PageNotFound from "./PageNotFound";
 
 class App extends React.Component {
   constructor() {
@@ -25,34 +25,32 @@ class App extends React.Component {
     this.setState({ filter: value });
   };
 
+  renderHome = () => {
+    const filteredList = this.state.characterList.filter(char =>
+      char.name.toLowerCase().includes(this.state.filter.toLowerCase())
+    );
+    return (
+      <Home characterList={filteredList} value={this.state.filter}onchange={this.handleChange}/>
+    );
+  };
 
-
-  render() {
-    const renderCharacterList = () => {
-      return (
-        <CharacterList characterList={this.state.characterList}
-           filter={this.state.filter}>
-          <Filters value={this.state.filter} onchange={this.handleChange} />
-        </CharacterList>
-        
-      );
-    };
-
-    const renderCharacterDetails = props => {
-      let clickedChar = {};
-      const routName = props.match.params.name;
-      for (const char of this.state.characterList){
-        let names = char.name.split(' ');
-        names = `${names[0]}_${names[1]}`
-        if (names === routName){
-          clickedChar = char
-        }
+  renderCharacterDetails = props => {
+    let clickedChar = {};
+    const routName = props.match.params.name;
+    for (const char of this.state.characterList) {
+      let names = char.name.split(" ");
+      names = `${names[0]}_${names[1]}`;
+      if (names === routName) {
+        clickedChar = char;
       }
-      return(
-        <CharacterDetail char={clickedChar}/>
-      )
-    };
-
+    }
+    console.log(clickedChar)
+    return Object.keys(clickedChar).length > 0
+    ? <CharacterDetail char={clickedChar} />
+    : <PageNotFound />
+  };
+  
+  render() {
     return (
       <div className="app">
         <header className="header">
@@ -60,10 +58,11 @@ class App extends React.Component {
             <img src={logo} alt="Rick and Morty lista de personajes" />
           </div>
         </header>
-       
+
         <Switch>
-          <Route exact path="/" render={renderCharacterList} />
-          <Route path="/details/:name" render={renderCharacterDetails} />
+          <Route exact path="/" render={this.renderHome} />
+          <Route exact path="/details/:name" render={this.renderCharacterDetails} />
+          <Route component={PageNotFound} />
         </Switch>
       </div>
     );

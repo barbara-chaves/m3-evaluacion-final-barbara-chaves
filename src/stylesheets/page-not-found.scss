@@ -1,0 +1,19 @@
+@import "./variables.scss";
+
+.page-not-found {
+  margin-top: 50px;
+  color: $textColor;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__button {
+    padding: 10px;
+    border-radius: 12px;
+    border: none;
+    a {
+      text-decoration-line: none;
+      color: $appBGColor;
+      font-size: 1rem;
+    }
+  }
+}
